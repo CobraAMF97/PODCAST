@@ -3,73 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast Caché</title>
+    <title>Podcast Secret</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #121212; /* Noir profond pour le fond */
-            color: #ffffff; /* Texte en blanc */
+            margin: 0;
         }
-
         .container {
             text-align: center;
-            max-width: 80%;
             padding: 20px;
-            border-radius: 12px;
-            background: linear-gradient(145deg, #3b3b3b, #1e1e1e);
-            box-shadow: 10px 10px 20px #0e0e0e, -10px -10px 20px #2e2e2e;
+            background-color: #282828;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-
         h1 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #e91e63; /* Couleur rose caractéristique de Deezer */
-            margin-bottom: 20px;
+            color: #1db954;
         }
-
-        p {
-            font-size: 18px;
-            margin: 10px 0;
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+            width: 80%;
+            max-width: 300px;
         }
-
-        .code-info {
-            margin-top: 30px;
-            padding: 15px 25px;
-            border-radius: 25px;
-            background-color: #6200ea; /* Violet pour le code secret */
+        button {
+            padding: 10px 20px;
+            background-color: #1db954;
             color: #ffffff;
-            font-size: 24px;
-            font-weight: 700;
-            display: inline-block;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
         }
-
-        .code-info:before {
-            content: 'Code secret: ';
-            color: #ffeb3b; /* Jaune pour mettre en avant le mot "Code secret" */
+        button:hover {
+            background-color: #148a39;
         }
-
-        .footer-message {
-            margin-top: 40px;
-            font-size: 14px;
-            color: #aaaaaa;
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Un podcast est caché ici</h1>
-        <p>Le podcast ne s'active que le jour de l'événement.</p>
-        <p>Pour l'écouter, utilisez le code secret.</p>
-        <div class="code-info">NARVALO21</div>
-        <p class="footer-message">Revenez le jour de l'événement pour découvrir le podcast caché.</p>
+        <h1>Podcast Secret</h1>
+        <p>Un podcast est caché ici. Entrez le code secret pour le déverrouiller.</p>
+        <input type="text" id="secretCode" placeholder="Entrez le code secret">
+        <button onclick="checkCode()">Déverrouiller</button>
+        <p id="message"></p>
     </div>
+
+    <script>
+        function checkCode() {
+            const code = document.getElementById('secretCode').value;
+            const message = document.getElementById('message');
+
+            if (code === 'NARVALO21') {
+                message.textContent = "Le podcast sera disponible le jour de l'événement.";
+                // Si vous avez un lien vers le podcast, vous pouvez décommenter la ligne suivante
+                // window.location.href = "URL_DU_PODCAST";
+            } else {
+                message.textContent = "Code incorrect. Veuillez réessayer.";
+            }
+        }
+    </script>
 </body>
 </html>
+
