@@ -3,62 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ne cliquez surtout pas ici</title>
+    <title>Podcast Caché</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #1c1c1c;
-            color: #ffffff;
+            background-color: #121212; /* Noir profond pour le fond */
+            color: #ffffff; /* Texte en blanc */
         }
 
         .container {
             text-align: center;
+            max-width: 80%;
+            padding: 20px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #3b3b3b, #1e1e1e);
+            box-shadow: 10px 10px 20px #0e0e0e, -10px -10px 20px #2e2e2e;
         }
 
         h1 {
-            color: #ff4757; /* Couleur rouge pour attirer l'attention */
+            font-size: 36px;
+            font-weight: 700;
+            color: #e91e63; /* Couleur rose caractéristique de Deezer */
+            margin-bottom: 20px;
         }
 
-        .secret-button {
-            background-color: #6200ea; /* Couleur violette pour le bouton */
-            color: #ffffff;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 30px;
+        p {
             font-size: 18px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px 0;
         }
 
-        .secret-button:hover {
-            background-color: #3700b3;
-            transform: scale(1.05);
+        .code-info {
+            margin-top: 30px;
+            padding: 15px 25px;
+            border-radius: 25px;
+            background-color: #6200ea; /* Violet pour le code secret */
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            display: inline-block;
         }
 
-        .secret-button:active {
-            background-color: #6200ea;
-            transform: scale(1.02);
+        .code-info:before {
+            content: 'Code secret: ';
+            color: #ffeb3b; /* Jaune pour mettre en avant le mot "Code secret" */
+        }
+
+        .footer-message {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaaaaa;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ne cliquez surtout pas ici</h1>
-
-        <!-- Bouton stylisé -->
-        <button class="secret-button" onclick="redirectToSecret()">Ne cliquez surtout pas ici</button>
+        <h1>Un podcast est caché ici</h1>
+        <p>Le podcast ne s'active que le jour de l'événement.</p>
+        <p>Pour l'écouter, utilisez le code secret.</p>
+        <div class="code-info">NARVALO21</div>
+        <p class="footer-message">Revenez le jour de l'événement pour découvrir le podcast caché.</p>
     </div>
-
-    <script>
-        function redirectToSecret() {
-            window.location.href = "https://example.com/event-not-active"; // Remplacez par l'URL réelle
-        }
-    </script>
 </body>
 </html>
-
